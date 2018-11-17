@@ -1,6 +1,8 @@
 #!/bin/bash
 
-PORT=/dev/tty.wchusbserial141140
+#PORT=/dev/tty.wchusbserial141140
+#PORT=/dev/tty.wchusbserial14140
+PORT=/dev/tty.SLAB_USBtoUART
 
 esptool.py --port ${PORT} --baud 921600 chip_id > bkupesp.tmp
 CHIP_ID=$(cat bkupesp.tmp | grep "Chip ID: 0x" | cut -d "x" -f2-)
